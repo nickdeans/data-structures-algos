@@ -16,4 +16,4 @@ const singleNumber = (nums) => {
             return key;
         }
     }
-};
+}; 
