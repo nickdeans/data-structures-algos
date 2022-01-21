@@ -2,7 +2,7 @@
 // remove the duplicates in-place such that each unique element appears only once. 
 // The relative order of the elements should be kept the same.
 
-var removeDuplicates = function(nums) {
+const removeDuplicates = (nums) => {
     let j = 0;
         
     for(let i = 0; i < nums.length; i++) {
@@ -13,6 +13,18 @@ var removeDuplicates = function(nums) {
     }
     return j + 1;
     };
+
+const removeDuplicates = (nums) => {
+        let start = 0  
+        
+        for(i = 0; i < nums.length; i++) {   
+            if(nums[i] !== nums[i+1]) {
+                nums[start] = nums[i]
+                start++
+            }
+        }
+        return start
+};
     
     
 //     //since array is already sorted, all ocurences will appear next to each other
