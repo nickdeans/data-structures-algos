@@ -1,8 +1,8 @@
 // Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
 
 const moveZeroes = (nums) => {
-    var idx = 0;
-    for(var i = 0; i < nums.length; i++) {
+    let idx = 0;
+    for(let i = 0; i < nums.length; i++) {
       if(nums[i] !== 0) {
         nums[idx] = nums[i];
           if (idx !== i) {
