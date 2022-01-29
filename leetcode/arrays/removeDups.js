@@ -25,6 +25,18 @@ const removeDuplicates = (nums) => {
         }
         return start
 };
+
+// Using additional array data structure;
+const removeDuplicates = (nums) => {
+        let newArr = [];
+        
+        for(i = 0; i < nums.length; i++) {   
+            if(nums[i] !== nums[i+1]) {
+                newArr.push(nums[i]) 
+            }
+        }
+        return newArr;
+};
     
     
 //     //since array is already sorted, all ocurences will appear next to each other
