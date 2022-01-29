@@ -26,3 +26,22 @@ const firstUniqChar = (s) => {
 // add values to map
 // create another string and if value is in map return index
 // otherwise return -1
+
+const firstUniqChar = (s) => {
+    let map = {};
+    
+    for(let i = 0; i < s.length; i++) {
+        if(!map[s[i]]) {
+            map[s[i]] = i
+        } else {
+            map[s[i]] = -1;
+        }
+    }
+    
+    for(let [key, value] of Object.entries(map)) {
+        if(value >= 0) {
+            return value;
+        }
+    }
+    return -1;
+};
