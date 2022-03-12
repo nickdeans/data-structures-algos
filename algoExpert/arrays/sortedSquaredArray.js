@@ -13,3 +13,26 @@ const sortedSquaredArray = (array) => {
 	newArray.sort((a,b) => a - b)
 	return newArray
 }
+
+
+const sortedSquaredArray = (array) => {
+    // I can create an array with same length and filled with 0s
+      // let newArray = new Array(array.length).fill(0);
+      
+      // I can create nw array with given array and assign new values
+    let newArray = [...array]
+      
+      let i = 0;
+      let j = array.length - 1;
+      
+      for(let idx = array.length - 1; idx >= 0; idx--) {
+                  if((array[i] * array[i]) < (array[j] * array[j])) {
+                      newArray[idx] = (array[j] * array[j])
+                      j--
+                  } else {
+                      newArray[idx] = (array[i] * array[i])
+                      i++
+              }
+      }
+      return newArray;
+  }
