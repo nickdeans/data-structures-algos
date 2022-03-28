@@ -5,8 +5,9 @@
 // to the right, and proceeds in a spiral pattern all the way until every element
 // has been visited.
 
+
 const spiralTraverse = (array) => {
-	const spiralArray = [];
+    const spiralArray = [];
 	let startRow = 0, endRow = array.length - 1;
 	let startCol = 0, endCol = array[0].length - 1;
 	
@@ -32,7 +33,7 @@ const spiralTraverse = (array) => {
 		startRow++;
 		endRow--;
 		startCol++;
-		endRow--;
-	}
+		endCol--;
+    }
 	return spiralArray;
 }
