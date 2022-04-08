@@ -20,9 +20,9 @@ const isPalindrome = (string) => {
 const isPalindrome = (string) => {
     let reversedStr = '';
       
-      for(let i = string.length - 1; i >= 0; i--) {
-          reversedStr += string[i]
-      }
-      
-      return string === reversedStr;
+    for(let i = string.length - 1; i >= 0; i--) {
+        reversedStr += string[i]
+    }
+    
+    return string === reversedStr;
   }
