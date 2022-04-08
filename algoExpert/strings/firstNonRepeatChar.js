@@ -23,3 +23,18 @@ const firstNonRepeatingCharacter = (string) => {
       }
       return -1;
   }
+
+const firstNonRepeatingCharacter = (string) => {
+    for(let i = 0; i < string.length; i++) {
+          let duplicate = false;
+          for(let j = 0; j < string.length; j++) {
+              if(string[i] === string[j] && i !== j) {
+                  duplicate = true;
+              }
+          }
+          if(!duplicate) {
+              return i;
+          }
+      }
+    return -1;
+  }
