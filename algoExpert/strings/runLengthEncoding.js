@@ -8,24 +8,50 @@
 // decodable, this means that we can't naively run-length-encode long runs. For
 // example, the run AAAAAAAAAAAA or 12A can't be over 10.
 // It should be encoded as 9A3A
+
+
+// Runtime is O(n2) because I used a string
 const runLengthEncoding = (string) => {
     let newStr = '';
-      let count = 1;
-      
-      for(let i = 1; i < string.length; i++) {
-          let current = string[i];
-          let prev = string[i - 1];
-          
-          if(current !== prev || count === 9) {
-              newStr += count;
-              newStr += prev;
-              count = 0;
-          }
-          count++
-      }
-      
-      newStr += count;
-      newStr += string[string.length - 1]
-  
-      return newStr;
+    let count = 1;
+    
+    for(let i = 1; i < string.length; i++) {
+        let current = string[i];
+        let prev = string[i - 1];
+        
+        if(current !== prev || count === 9) {
+            newStr += count;
+            newStr += prev;
+            count = 0;
+        }
+        count++
+    }
+    
+    newStr += count;
+    newStr += string[string.length - 1]
+
+    return newStr;
+  }
+
+// Using an array allows for better runtime O(n) 
+const runLengthEncoding = (string) => {
+    let newArray = [];
+    let count = 1;
+    
+    for(let i = 1; i < string.length; i++) {
+        let current = string[i];
+        let prev = string[i - 1];
+        
+        if(current !== prev || count === 9) {
+            newArray.push(count.toString());
+            newArray.push(prev)
+            count = 0
+        }
+        count++
+    }
+    
+    newArray.push(count.toString());
+    newArray.push(string[string.length - 1])
+
+    return newArray.join('')
   }
