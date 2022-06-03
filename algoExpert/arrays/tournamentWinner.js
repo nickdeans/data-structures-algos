@@ -41,4 +41,35 @@ const tournamentWinner = (competitions, results) => {
       
       return winner;
   }
+
+const tournamentWinner = (competitions, results) => {
+  let winner = '';
+  let map = {};
+  let idx = 0;
+  let mostPoints = 0;
+
+  for(let i = 0; i < competitions.length; i++) {
+    if(!map[competitions[i][0]]) {
+      map[competitions[i][0]] = 0
+    } 
+    if(!map[competitions[i][1]]) {
+      map[competitions[i][1]] = 0
+    }
+
+    if(results[idx] === 0) {
+      map[competitions[i][1]]++
+    } else {
+      map[competitions[i][0]]++
+    }
+    idx++
+  }
+
+  for(let [key, value] of Object.entries(map)) {
+    if(value > mostPoints) {
+      winner = key;
+      mostPoints = value;
+    }
+  }
+  return winner;
+}
   
